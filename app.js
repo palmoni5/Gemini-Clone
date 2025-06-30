@@ -2445,8 +2445,8 @@ class GeminiClone {
         <body>
             <div class="title">${chat.title}</div>`;
 
-        // הוספת System Prompt אם נבחר
-        if (includeSystemPrompts && chat.systemPrompt) {
+        // הוספת System Prompt רק אם המשתמש הגדיר אותה (בדף chat-page)
+        if (includeSystemPrompts && chat.systemPrompt && this.pageConfig === 'chat-page') {
             html += `<div class="system-prompt">
                 <div>System Prompt:</div>
                 <div>${this.formatMessageContent(chat.systemPrompt)}</div>
@@ -2488,7 +2488,8 @@ class GeminiClone {
     exportToText(chat, includeTimestamps, includeSystemPrompts) {
         let text = `${chat.title}\n\n`;
 
-        if (includeSystemPrompts && chat.systemPrompt) {
+        // הוספת System Prompt רק אם המשתמש הגדיר אותה (בדף chat-page)
+        if (includeSystemPrompts && chat.systemPrompt && this.pageConfig === 'chat-page') {
             text += `System Prompt: ${chat.systemPrompt}\n\n`;
         }
 
