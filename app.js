@@ -2266,8 +2266,8 @@ class GeminiClone {
         doc.setFontSize(12);
         let y = 40;
 
-        // הוספת System Prompt אם נבחר
-        if (includeSystemPrompts && chat.systemPrompt) {
+        // הוספת System Prompt רק אם המשתמש הגדיר אותה (בדף chat-page)
+        if (includeSystemPrompts && chat.systemPrompt && this.pageConfig === 'chat-page') {
             doc.setFont('Helvetica', 'italic');
             doc.text('System Prompt:', 190, y, { align: 'right' });
             y += 7;
@@ -2277,7 +2277,6 @@ class GeminiClone {
             doc.text(systemPromptLines, 190, y, { align: 'right' });
             y += systemPromptLines.length * 7 + 10;
         }
-
         // הוספת כל ההודעות
         for (const msg of chat.messages) {
             const role = msg.role === 'user' ? 'אתה' : 'Gemini';
