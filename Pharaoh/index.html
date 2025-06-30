@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-<meta name="page-config" content="chat-page">
+<meta name="page-config" content="Pharaoh-page">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini Clone - AI Chat Assistant</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/jpeg" href="LOGO.jpeg">    
+    <title>פרעה</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/jpeg" href="Pharaoh1.jpg">        
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
@@ -84,18 +84,6 @@
                         <option value="gemini-1.0-pro">Gemini 1.0 Pro</option>
                     </select>
                 </div>
-                <div class="system-prompt">
-                    <label>הנחיות מערכת:</label>
-                    <select id="systemPromptTemplate">
-                        <option value="">בחר תבנית</option>
-                        <option value="expert">מומחה בתחום</option>
-                        <option value="creative">יצירתיות מקסימלית</option>
-                        <option value="concise">תשובות קצרות וממוקדות</option>
-                        <option value="code">מתכנת מקצועי</option>
-                        <option value="custom">מותאם אישית</option>
-                    </select>
-                    <textarea id="systemPrompt" placeholder="הזן הנחיות מערכת מותאמות אישית (לדוגמא: 'פעל כמומחה בתחום הרפואה')"></textarea>
-                </div>
                 <div class="advanced-settings">
                     <details>
                         <summary>הגדרות מתקדמות</summary>
@@ -148,30 +136,15 @@
                                     הסתר חלון טעינת תשובה
                                 </label>
                         </div>
+                    </details>
                     <div class="page-buttons-wrapper">
-                        <div class="page-buttons-title">עבור לדמות:</div>
+                        <div class="page-buttons-title">חזור לצ'אט רגיל:</div>
                         <div class="page-buttons column">
-                            <button class="page-btn load-page-btn" data-page="Pharaoh" title="פרעה">
-                                <img src="Pharaoh/Pharaoh.jpg" alt="פרעה" class="page-img">
-                            </button>
-                            <button class="page-btn load-page-btn" data-page="trump" title="טראמפ">
-                                <img src="trump/trump.jpg" alt="טראמפ" class="page-img">
-                            </button>
-                            <button class="page-btn load-page-btn" data-page="nati" title="נתי">
-                                <img src="nati/nati.jpg" alt="נתי" class="page-img">
-                            </button>
-                            <button class="page-btn load-page-btn" data-page="TheModernDream" title="החלום המודרני">
-                                <img src="TheModernDream/TheModernDream.jpg" alt="החלום המודרני" class="page-img">
-                            </button>
-                            <button class="page-btn load-page-btn" data-page="Anara" title="אנארה">
-                                <img src="Anara/Anara.jpg" alt="אנארה" class="page-img">
-                            </button>
-                            <button class="page-btn load-page-btn" data-page="TheWiseLibrarian" title="הספרן החכם">
-                                <img src="TheWiseLibrarian/TheWiseLibrarian.jpg" alt="הספרן החכם" class="page-img">
+                            <button class="page-btn load-page-btn" data-page="../" title="Gemini">
+                                <span class="material-icons">auto_awesome</span>
                             </button>
                         </div>
                     </div>
-                    </details>
                 </div>
             </div>
         </div>
@@ -213,43 +186,21 @@
                 <button class="action-btn" id="regenerateBtn" title="צור תשובה מחדש">
                     <span class="material-icons">refresh</span>
                 </button>
+
             </div>
         </div>
         <div class="chat-container" id="chatContainer">
             <div class="welcome-screen" id="welcomeScreen">
                 <div class="welcome-content">
-                    <div class="gemini-logo">
-                        <div class="logo-animation">
-                            <span class="material-icons">auto_awesome</span>
+                    <div class="">
+                        <div class="YRTNP1.jpg">
+                            <span class=</span>
                         </div>
                     </div>
-                   <h1 class="welcome-title">שלום, אני Gemini</h1>
-                    <p>איך אני יכול לעזור לך היום?</p>
+                    <img src="Pharaoh1.jpg" alt="תיאור התמונה" width="420">
+                    <h1>שלום, אני פרעה, מלך מצרים העתיקה</h1>
+                    <p>התרצה להעזר בי היום?</p>
                     <div class="suggestion-cards">
-                        <div class="suggestion-card" data-prompt="כתוב לי מאמר מקיף על השפעת הבינה המלאכותית על העתיד">
-                            <div class="card-icon"><span class="material-icons">article</span></div>
-                            <div class="card-content"><h4>כתיבה יצירתית</h4><p>כתוב מאמר על בינה מלאכותית</p></div>
-                        </div>
-                        <div class="suggestion-card" data-prompt="עזור לי לתכנן פרויקט טכנולוגי מתקדם עם לוח זמנים מפורט">
-                            <div class="card-icon"><span class="material-icons">lightbulb</span></div>
-                            <div class="card-content"><h4>תכנון פרויקטים</h4><p>עזור לי לתכנן פרויקט</p></div>
-                        </div>
-                        <div class="suggestion-card" data-prompt="הסבר לי את עקרונות הפיזיקה הקוונטית בצורה פשוטה ומובנת">
-                            <div class="card-icon"><span class="material-icons">school</span></div>
-                            <div class="card-content"><h4>הסברים מדעיים</h4><p>הסבר מושגים מורכבים</p></div>
-                        </div>
-                        <div class="suggestion-card" data-prompt="כתוב לי קוד Python מתקדם לניתוח נתונים עם הסברים מפורטים">
-                            <div class="card-icon"><span class="material-icons">code</span></div>
-                            <div class="card-content"><h4>תכנות</h4><p>כתוב קוד לפתרון בעיות</p></div>
-                        </div>
-                        <div class="suggestion-card" data-prompt="תן לי רעיונות לבישול ארוחה בריאה ומזינה לשבוע שלם">
-                            <div class="card-icon"><span class="material-icons">restaurant</span></div>
-                            <div class="card-content"><h4>בישול ותזונה</h4><p>רעיונות לארוחות בריאות</p></div>
-                        </div>
-                        <div class="suggestion-card" data-prompt="עזור לי לתכנן טיול מפורט לחו״ל עם המלצות מקומות ופעילויות">
-                            <div class="card-icon"><span class="material-icons">flight</span></div>
-                            <div class="card-content"><h4>תכנון טיולים</h4><p>תכנן חופשה מושלמת</p></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -394,6 +345,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="app.js"></script>
+    <script src="../app.js"></script>
 </body>
 </html>
