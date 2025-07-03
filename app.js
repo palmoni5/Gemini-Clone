@@ -22,11 +22,11 @@ class GeminiClone {
                 dislikeMessage: 'אם זאת תגובתך, מוטב כי תשתוק ולא תוסיף חטא על פשע.',
                 feedbackAsAlert: false
             },
-            'עורר חשיבה עמוקה באמצעות': {
+            'עורך הקוד': {
                 iconPath: '../Code/Code.jpg',
                 label: 'עורך קוד',
             },
-            'עורך הקוד': {
+            'עורר חשיבה עמוקה באמצעות': {
                 iconPath: '../TheModernDream/TheModernDream.jpg',
                 label: 'Gemini',
                 likeMessage: 'אתה באמת רואה את מה שמעבר? תודה על ההבנה העמוקה.',
@@ -60,7 +60,7 @@ class GeminiClone {
             'text/x-sql', 'text/html', 'text/javascript', 'text/typescript'
         ];
 
-        this.forbiddenWords = ['בחור ישיבה מבוגר', 'טראמפ', 'פרעה', 'ספרן הידען הנצחי', 'עורר חשיבה עמוקה באמצעות', 'קוסמיות ומיתיות כדי להפוך תשובות פשוטות'];
+        this.forbiddenWords = ['בחור ישיבה מבוגר', 'טראמפ', 'פרעה', 'ספרן הידען הנצחי', 'עורך הקוד' 'עורר חשיבה עמוקה באמצעות', 'קוסמיות ומיתיות כדי להפוך תשובות פשוטות'];
 
         this.currentChatId = null;
         this.chats = JSON.parse(localStorage.getItem('gemini-chats') || '{}');
