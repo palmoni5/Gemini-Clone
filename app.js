@@ -1429,9 +1429,12 @@ class GeminiClone {
             }
 
             const messages = [
-                { role: 'system', parts: [{ text: this.chats[this.currentChatId].systemPrompt || this.systemPrompt || 'היה עוזר מועיל וענה בצורה ברורה ומדויקת' }] },
-                ...history,
-                { role: 'user', parts: parts }
+                    { role: 'system', content: systemPrompt },
+                ...(this.settings.includeChatHistory ? this.chats[this.currentChatId].messages.map(msg => ({
+                    role: msg.role,
+                    content: msg.content,
+                    files: msg.files || []
+                })) : [{ role: 'user', content: message, files: messageFiles }])
             ];
 
             const response = await this.callGemini(message, this.abortController.signal, messageFiles);
