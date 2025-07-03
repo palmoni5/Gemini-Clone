@@ -990,6 +990,9 @@ class GeminiClone {
 
     getModelDisplayName(modelId) {
         const models = {
+            'gemini-2.5-pro': 'gemini 2.5 pro',
+            'gemini-2.5-flash': 'gemini 2.5 flash',
+            'gemini-2.5-flash-lite-preview-06-17': 'Gemini Flash lite 2.5 (Preview)',
             'gemini-2.5-flash-preview-05-20': 'Gemini Flash 2.5 (Preview)',
             'gemini-2.5-flash': 'Gemini 2.5 Flash',
             'gemini-2.0-flash-exp': 'Gemini 2.0 Flash Experimental',
@@ -1835,7 +1838,6 @@ class GeminiClone {
 
     formatMessageContent(content) {
         let formatted = content;
-        
         formatted = formatted.replace(/```(\w+)?\n([\s\S]*?)```/g, (match, lang, code) => {
             lang = lang || 'javascript';
             const escapedCode = code
@@ -1848,7 +1850,6 @@ class GeminiClone {
                 <button class="copy-code-btn" title="העתק קוד"><span class="material-icons">content_copy</span></button>
             </pre>`;
         });
-        
         formatted = formatted.replace(/`([^`]+)`/g, '<code>$1</code>');
         formatted = formatted.replace(/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
         formatted = formatted.replace(/^### (.*)$/gm, '<h3>$1</h3>');
@@ -1859,8 +1860,6 @@ class GeminiClone {
         formatted = formatted.replace(/^\d+\. (.+)$/gm, '<li>$1</li>');
         formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         formatted = formatted.replace(/\*(.*?)\*/g, '<em>$1</em>');
-        formatted = formatted.replace(/__(.*?)__/g, '<u>$1</u>');
-        
         formatted = formatted.replace(/((?:\|.+\|(?:\n|$))+)/g, (table) => {
             const rows = table.trim().split('\n');
             let tableHtml = '<table>';
@@ -1883,23 +1882,16 @@ class GeminiClone {
             }
             return tableHtml + '</table>';
         });
-        
-        // שמירת code blocks זמנית
         const tempCodeBlocks = [];
         formatted = formatted.replace(/<pre class="code-block">[\s\S]*?<\/pre>/g, (match) => {
             const index = tempCodeBlocks.length;
             tempCodeBlocks.push(match);
             return `__TEMP_CODE_${index}__`;
         });
-
-        // המרת מעברי שורות ל-<br> רק מחוץ ל-code blocks
         formatted = formatted.replace(/\n/g, '<br>');
-
-        // החזרת code blocks
         tempCodeBlocks.forEach((block, index) => {
             formatted = formatted.replace(`__TEMP_CODE_${index}__`, block);
         });
-        
         return formatted;
     }
 
