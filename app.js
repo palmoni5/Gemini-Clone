@@ -11,13 +11,16 @@ class GeminiClone {
             'טראמפ': {
                 iconPath: '../trump/trump.jpg',
                 label: 'טראמפ',
-                likeMessage: 'תודה! אני תמיד צודק, כולם יודעים את זה.',
-                dislikeMessage: 'פייק ניוז! לגמרי פייק ניוז! הם פשוט מקנאים.',
+                likeMessage: 'תודה! אני תמיד צודק, כולם יודעים את זה!',
+                dislikeMessage: 'תודה על המשוב. אשתדל להיות יותר טוב.',
                 feedbackAsAlert: false
             },
             'עורך הקוד': {
                 iconPath: '../Code/Code.jpg',
                 label: 'עורך קוד',
+                likeMessage: 'תודה על המשוב! אני שמח שאהבת.',
+                dislikeMessage: 'פייק ניוז! לגמרי פייק ניוז! הם פשוט מקנאים.',
+                feedbackAsAlert: false
             },
             'פרעה': {
                 iconPath: '../Pharaoh/Pharaoh.jpg',
