@@ -23,6 +23,10 @@ class GeminiClone {
                 feedbackAsAlert: false
             },
             'עורר חשיבה עמוקה באמצעות': {
+                iconPath: '../Code/Code.jpg',
+                label: 'עורך קוד',
+            },
+            'עורך הקוד': {
                 iconPath: '../TheModernDream/TheModernDream.jpg',
                 label: 'Gemini',
                 likeMessage: 'אתה באמת רואה את מה שמעבר? תודה על ההבנה העמוקה.',
