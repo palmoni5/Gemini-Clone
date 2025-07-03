@@ -19,7 +19,7 @@ class GeminiClone {
                 iconPath: '../Code/Code.jpg',
                 label: 'עורך קוד',
                 likeMessage: 'תודה על המשוב! אני שמח שאהבת.',
-                dislikeMessage: 'פייק ניוז! לגמרי פייק ניוז! הם פשוט מקנאים.',
+                dislikeMessage: 'תודה על המשוב. אשתדל להיות יותר טוב',
                 feedbackAsAlert: false
             },
             'פרעה': {
